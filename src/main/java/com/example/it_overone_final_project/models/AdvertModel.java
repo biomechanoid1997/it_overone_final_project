@@ -13,6 +13,9 @@ public class AdvertModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
+    @Column(name = "name")
+    String name;
+
     @Column(name = "price")
     String price;
 

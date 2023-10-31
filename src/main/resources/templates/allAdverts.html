@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http:/www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,17 +46,22 @@
 </header>
 
 <main role="main">
-
-    <section class="jumbotron text-center">
-        <div class="container">
-
-        </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-        <div class="container">
-        </div>
+<!-- bugged sector -->
+<div class="album py-5 bg-light">
+   <div th:each="el : ${allAdverts}" class="alert alert-info mt-2">
+       <h3 th:text="${el.getName()}"></h3>
+       <p th:text="${el.getWeight()}"></p>
+       <p th:text="${el.getPrice()}"></p>
+       <p th:text="${el.getDisc()}"></p>
+       <h2>Sizes</h2>
+       <p th:text="${el.getHeight()}"></p>
+       <p th:text="${el.getWidth()}"></p>
+       <p th:text="${el.getLength()}"></p>
+       <a href="/advert" class="btn btn-primary my-2">подробнее</a>
+   </div>
     </div>
+<!-- bugged sector end -->
+
 
 </main>
 
